@@ -1,0 +1,2 @@
+# biomerger
+Fastq files merger
