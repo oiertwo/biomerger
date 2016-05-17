@@ -38,7 +38,7 @@ setup(
     ],
     url="",
     packages=find_packages(),
-    long_description=read('README.md'),
+    long_description=read('README.rst'),
     scripts=['scripts/biomerger'],
     classifiers=[
         "Development Status :: 4 - Beta",
