@@ -25,5 +25,11 @@ Instructions
 - for now only works with fastq files.
 -  files should have .fastq extension
 
+TODO
+====
+1) Get file location automatically
+2) Unzip files automatically
+3) Multi files
+4) More file types
 
     
