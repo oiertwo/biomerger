@@ -1,10 +1,20 @@
-# biomerger
+======
+biomerger
+======
 
 bioinformatics files merger
 
 
+Installation
+============
 
-Instructions:
-=========
+Required libraries
+    biopython
 
-` biomerger [file1] [file2] [mergerd_file]   `
+
+Instructions
+=============
+
+    biomerger [file1] [file2] [mergerd_file]
+
+    
