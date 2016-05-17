@@ -15,6 +15,16 @@ Required libraries
 Instructions
 =============
 
+1) Put file1 and file2 in the same location.
+2) Execute biomerger in that location
+
     biomerger [file1] [file2] [mergerd_file]
+
+3) biomerger will create 2 output. One of them gzipped.
+
+*) for now only works with fastq files.
+
+*) files should have .fastq extension
+
 
     
