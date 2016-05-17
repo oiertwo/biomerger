@@ -22,9 +22,8 @@ Instructions
 
 3) biomerger will create 2 output. One of them gzipped.
 
-*) for now only works with fastq files.
-
-*) files should have .fastq extension
+- for now only works with fastq files.
+-  files should have .fastq extension
 
 
     
