@@ -25,12 +25,18 @@ def main():
 
     try:
         print("merging... please wait, this is a good time for a coffee or a tea...")
-        merger.merge(os.path.join(os.getcwd(),sys.argv[1]), os.path.join(os.getcwd(),sys.argv[2]), os.path.join(os.getcwd(),sys.argv[3]))
+
+        argc = len(sys.argv[:])
+        params = []
+        for i in range(1,argc-2):
+            params.append(sys.arv[i])
+        merger.merge(params, sys.argv[argc-1])
+        #merger.merge(os.path.join(os.getcwd(),sys.argv[1]), os.path.join(os.getcwd(),sys.argv[2]), os.path.join(os.getcwd(),sys.argv[3]))
 
     except:
         print("arguments missing")
         print("structure: ")
-        print("biomerge [file1] [file2] [mergedfile]")
+        print("biomerge [file1] [file2] ... [fileN] [mergedfile]")
         print("(hint) all file extension should be *.fastq")
 
 if __name__ == '__main__':

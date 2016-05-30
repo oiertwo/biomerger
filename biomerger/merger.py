@@ -4,18 +4,28 @@ import sys
 import itertools
 import gzip
 import shutil
+from itertools import zip_longest
 
-def merge(f1, f2, f_out, compress=True):
+def merge(files, f_out, compress=True):
 
     #p1 = os.path.join(location, f1)
     #p2 = os.path.join(location, f1)
     #out = os.path.join(location, f_out)
 
     outfile = open(f_out,"w")
-    fastq_iter1 = SeqIO.parse(open(f1),"fastq")
-    fastq_iter2 = SeqIO.parse(open(f2),"fastq")
-    for rec1, rec2 in zip(fastq_iter1, fastq_iter2):
-        SeqIO.write([rec1,rec2], outfile, "fastq")
+    fastq_iters = []
+    for f in files:
+        try:
+            fastq_iters.append(SeqIO.parse(open(f),"fastq"))
+        except:
+            fastq_iters.append(SeqIO.parse(gzip.open(f), "fastq"))
+
+    for t in zip_longest(fastq_iters):
+        add = []
+        for rec in t:
+            if(rec != None):
+                add.append(rec)
+        SeqIO.write(add, outfile, "fastq")
     outfile.close()
 
     #compress
